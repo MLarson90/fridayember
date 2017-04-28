@@ -7,6 +7,11 @@ const Router = Ember.Router.extend({
 });
 
 Router.map(function() {
+  this.route('about');
+  this.route('contact');
+  this.route('questions');
+  this.route('indivQuest');
+  this.route('indiv-quest');
 });
 
 export default Router;

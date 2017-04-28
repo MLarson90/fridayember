@@ -1,0 +1,18 @@
+.custNav li{
+  display:inline;
+  list-style: none;
+  color: black;
+  padding-top: 30px;
+}
+.custNav{
+  background: blue;
+  height: 50px;
+}
+.custNav li a{
+  display:inline;
+  list-style: none;
+  color: white;
+  margin: 20px;
+  font-size: 2em;
+  text-decoration: none;
+}
