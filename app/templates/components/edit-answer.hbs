@@ -1,13 +1,14 @@
-{{answer.content}}
+
+<h4>{{answer.content}}</h4>
 {{#if formAnswer}}
 <form class="newPost">
   <label for="edit_content"></label>
   {{input value=edit_content id="edit_content" type="text" placeholder="Answer" required=true}}
   <label for="edit_author"></label>
   {{input value=edit_author id="edit_author" type="text" placeholder="Author" required=true}}
-  <button {{action 'updateAnswer' answer}}>Save Changes</button>
+  <button class="btn btn-success" {{action 'updateAnswer' answer}}>Save Changes</button>
 </form>
 {{else}}
-  <button {{action 'showAnswer'}}>Edit answer</button>
+  <button class="btn btn-success" {{action 'showAnswer'}}>Edit answer</button>
 {{/if}}
-  <button {{action 'destroyAnswer' answer}}>Delete answer</button>
+  <button class="btn btn-danger" {{action 'destroyAnswer' answer}}>Delete answer</button>

@@ -8,7 +8,7 @@
       <label for="name">Enter your name</label>
       {{input value=name id="name"}}
     </div>
-    <button {{action 'saveAnswer' }}>Submit</button>
+    <button class="btn btn-success" {{action 'saveAnswer' }}>Submit</button>
   </form>
   {{else}}
   <button {{action 'showAnswerForm'}}>Add Answer</button>

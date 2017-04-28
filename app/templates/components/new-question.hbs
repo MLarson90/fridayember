@@ -15,9 +15,9 @@
      {{input value=note id="note"}}
    </div>
  <div class="form-group">
-   <button {{action 'saveQuestion'}}>Save</button>
+   <button class="btn btn-success" {{action 'saveQuestion'}}>Save</button>
  </div>
 </form>
 {{else}}
-<button class="btn btn-info" {{action 'newQuestionFormShow'}}>Add New Question</button>
+<button class="btn btn-success" {{action 'newQuestionFormShow'}}>Add New Question</button>
 {{/if}}

@@ -1,21 +1,30 @@
-{{question.main}} {{question.author}} {{question.note}}
-<br>
-{{#if updateQuestion}}
-<form class="newPost">
-  <label for="edit_main"></label>
-  {{input value=edit_main id="edit_main" type="text" placeholder="Question" required=true}}
-  <label for="edit_author"></label>
-  {{input value=edit_author id="edit_author" type="text" placeholder="Author" required=true}}
-  <label for="edit_note"></label>
-  {{input value=edit_note id="edit_note" type="text" placeholder="notes" required=true}}
+<div class="container">
+  <div class="editor">
+    <h2>{{question.main}}</h2>
+    <h5>{{question.note}}</h5>
+    <h5>Asked By: {{question.author}}</h5>
+    <br>
+    {{#if updateQuestion}}
+      <form class="newPost">
+        <label for="edit_main"></label>
+        {{input value=edit_main id="edit_main" type="text" placeholder="Question" required=true}}
+        <label for="edit_author"></label>
+        {{input value=edit_author id="edit_author" type="text" placeholder="Author" required=true}}
+        <label for="edit_note"></label>
+        {{input value=edit_note id="edit_note" type="text" placeholder="notes" required=true}}
 
-  <button {{action 'update' question}}>Save Changes</button>
-</form>
-{{else}}
-  <button {{action 'showQuestion'}}>Edit Question</button>
-{{/if}}
-<button {{action 'delete' question}}>Delete</button>
-<br>
-{{#each question.answers as |answer|}}
-  {{edit-answer answer=answer updateAnswer="updateAnswer" destroyAnswer="destroyAnswer"}}
-{{/each}}
+        <button class="btn btn-success" {{action 'update' question}}>Save Changes</button>
+      </form>
+    {{else}}
+      <button class="btn btn-success" {{action 'showQuestion'}}>Edit Question</button>
+    {{/if}}
+      <button class="btn btn-danger" {{action 'delete' question}}>Delete</button>
+      <br>
+      <div class="container answer">
+      <h3 class="answerLine">Answers:</h3>
+      {{#each question.answers as |answer|}}
+        {{edit-answer answer=answer updateAnswer="updateAnswer" destroyAnswer="destroyAnswer"}}
+      {{/each}}
+    </div>
+  </div>
+</div>
