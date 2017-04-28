@@ -1,0 +1,10 @@
+<h2>{{question.main}}</h2>
+<h4>{{question.note}}</h4>
+
+<h3>Answers:</h3>
+
+  <ul>
+    {{#each question.answers as |answer|}}
+      <li>{{show-answer answer=answer}}</li>
+    {{/each}}
+  </ul>

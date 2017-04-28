@@ -11,7 +11,7 @@ Router.map(function() {
   this.route('contact');
   this.route('questions');
   this.route('indivQuest');
-  this.route('indiv-quest');
+  this.route('indiv-quest', {path: '/indiv-quest/:question_id'});
 });
 
 export default Router;
