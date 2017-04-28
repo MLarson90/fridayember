@@ -1,0 +1,21 @@
+{{question.main}} {{question.author}} {{question.note}}
+<br>
+{{#if updateQuestion}}
+<form class="newPost">
+  <label for="edit_main"></label>
+  {{input value=edit_main id="edit_main" type="text" placeholder="Question" required=true}}
+  <label for="edit_author"></label>
+  {{input value=edit_author id="edit_author" type="text" placeholder="Author" required=true}}
+  <label for="edit_note"></label>
+  {{input value=edit_note id="edit_note" type="text" placeholder="notes" required=true}}
+
+  <button {{action 'update' question}}>Save Changes</button>
+</form>
+{{else}}
+  <button {{action 'showQuestion'}}>Edit Question</button>
+{{/if}}
+<button {{action 'delete' question}}>Delete</button>
+<br>
+{{#each question.answers as |answer|}}
+  {{edit-answer answer=answer updateAnswer="updateAnswer" destroyAnswer="destroyAnswer"}}
+{{/each}}

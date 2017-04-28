@@ -1,5 +1,7 @@
+<div class="container">
 {{new-question author=model saveQuestion="saveQuestion"}}
 
 {{#each model.questions as |question|}}
   {{all-questions question=question}}
 {{/each}}
+</div>

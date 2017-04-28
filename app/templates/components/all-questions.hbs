@@ -1,4 +1,8 @@
+{{#link-to 'indiv-quest' question.id}}
+<div class="home">
 <ul>
-  <li> {{#link-to 'indiv-quest' question.id}}{{question.main}}{{/link-to}}</li>
-  <li>from: {{question.author}}</li>
+  <li id=title><h2> {{question.main}}</h2></li>
+  <li><h4>Asked by: {{question.author}}</h4></li>
 </ul>
+</div>
+{{/link-to}}
